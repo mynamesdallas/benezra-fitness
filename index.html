@@ -11,29 +11,32 @@
 </head>
 <body>
     <nav class="navbar">
-    <div class="nav-logo">BenEzra Fitness</div>
+        <div class="nav-logo">BenEzra Fitness</div>
 
-    <ul class="nav-links">
-        <li><a href="#workout-plan">Workout Plan</a></li>
-        <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-        <li><a href="#bonus-tips">Bonus Tips</a></li>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        <!-- Product Links -->
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Fitness Gear ▾</a>
-            <div class="dropdown-content">
-                <a href="https://www.amazon.com/s?k=resistance+bands" target="_blank">Resistance Bands</a>
-                <a href="https://www.amazon.com/s?k=yoga+mat" target="_blank">Yoga Mats</a>
-                <a href="https://www.amazon.com/s?k=kettlebell" target="_blank">Kettlebells</a>
-                <a href="https://www.amazon.com/s?k=foam+roller" target="_blank">Foam Rollers</a>
-            </div>
-        </li>
-    </ul>
-</nav>
+        <ul class="nav-links">
+            <li><a href="#workout-plan">Workout Plan</a></li>
+            <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+            <li><a href="#bonus-tips">Bonus Tips</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Fitness Gear ▾</a>
+                <div class="dropdown-content">
+                    <a href="https://www.amazon.com/s?k=resistance+bands" target="_blank">Resistance Bands</a>
+                    <a href="https://www.amazon.com/s?k=yoga+mat" target="_blank">Yoga Mats</a>
+                    <a href="https://www.amazon.com/s?k=kettlebell" target="_blank">Kettlebells</a>
+                    <a href="https://www.amazon.com/s?k=foam+roller" target="_blank">Foam Rollers</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <header>
         <div class="title-container"><h1>BenEzra Fitness</h1></div>
-        
-        </div>
     </header>
     <main>
         <section class="heading">
@@ -203,6 +206,22 @@
                 }
             });
         });
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('show');
+        });
+
+        // Mobile dropdown behavior
+        dropdowns.forEach(drop => {
+        drop.addEventListener('click', () => {
+            drop.classList.toggle('open');
+        });
+    });
     </script>
 </body>
 </html>
+
